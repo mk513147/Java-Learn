@@ -1,0 +1,14 @@
+import java.uitl.*;
+public class 
+{
+    public static void main(String args[])
+    {
+    Scanner in=new Scanner(System.in)}
+    int a,b;
+    double p;
+    int a=in.nextInt(0);
+    int b=in.nextInt(1);
+    p = (double) (a*a+b*b)/(a-b);
+    System.out.println('The value of the ='+p);
+}
+ 
