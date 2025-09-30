@@ -8,20 +8,31 @@ public class Sum {
 
     public static void main(String[] args) {
         try (Scanner in = new Scanner(System.in)) {
-            int num, sumNev = 0, sumPosEven = 0, sumPosOdd = 0;
-            System.out.println("Enter the numbers and press 0 to exit.");
-            while ((num = in.nextInt()) != 0) {
-                if (num >= 0 && num % 2 == 0) {
-                    sumPosEven += num;
-                } else if (num >= 0 && num % 2 != 0) {
-                    sumPosOdd += num;
+            int sumNegative = 0;
+            int sumPositiveEven = 0;
+            int sumPositiveOdd = 0;
+
+            System.out.println("Enter numbers (0 to stop):");
+
+            while (true) {
+                int num = in.nextInt();
+
+                if (num == 0) {
+                    break;
                 } else if (num < 0) {
-                    sumNev += num;
+                    sumNegative += num;
+                } else {
+                    if (num % 2 == 0) {
+                        sumPositiveEven += num;
+                    } else {
+                        sumPositiveOdd += num;
+                    }
                 }
             }
-            System.out.println("Sum of negative numbers: " + sumNev);
-            System.out.println("Sum of positive even numbers: " + sumPosEven);
-            System.out.println("Sum of positive odd numbers: " + sumPosOdd);
+
+            System.out.println("Sum of negative numbers: " + sumNegative);
+            System.out.println("Sum of positive even numbers: " + sumPositiveEven);
+            System.out.println("Sum of positive odd numbers: " + sumPositiveOdd);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
