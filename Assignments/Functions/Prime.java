@@ -6,13 +6,26 @@ public class Prime {
 
     public static void main(String[] args) {
         try (Scanner in = new Scanner(System.in)) {
-            System.out.print("Enter a number: ");
-            int num = in.nextInt();
+            System.out.print("Enter first number: ");
+            int num1 = in.nextInt();
 
-            if (isPrime(num)) {
-                System.out.println("Prime");
-            } else {
-                System.out.println("Not Prime");
+            if (num1 <= 0) {
+                System.out.println("The number must be greater than 0.");
+                return;
+            }
+
+            System.out.print("Enter second number: ");
+            int num2 = in.nextInt();
+
+            if (num2 <= num1) {
+                System.out.println("The second number must be greater than the first one.");
+                return;
+            }
+
+            for (int i = num1; i <= num2; i++) {
+                if (isPrime(i)) {
+                    System.out.print(i + " ");
+                }
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
