@@ -4,7 +4,8 @@ public class Sorting {
     public static void main(String[] args) {
         int[] nums = { 5, 3, 1, 4, 6, 2 };
         // bubbleSort(nums);
-        selectionSort(nums);
+        // selectionSort(nums);
+        insertitionSort(nums);
         System.out.println(Arrays.toString(nums));
 
     }
@@ -47,6 +48,18 @@ public class Sorting {
             int last = nums.length - i - 1;
             int max = maxIndex(nums, 0, last);
             swap(nums, last, max);
+        }
+    }
+
+    static void insertitionSort(int[] nums) {
+        for (int i = 0; i < nums.length - 1; i++) {
+            for (int j = i + 1; j > 0; j--) {
+                if (nums[j] < nums[j - 1]) {
+                    swap(nums, j, j - 1);
+                } else {
+                    break;
+                }
+            }
         }
     }
 }
