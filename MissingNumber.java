@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class MissingNumber {
 
     public static void main(String[] args) {
@@ -26,9 +29,31 @@ public class MissingNumber {
 
     }
 
+    static List<Integer> findAll(int[] nums) {
+        int i = 0;
+        while (i < nums.length) {
+            int originalIndex = nums[i] - 1;
+            if (nums[i] != nums[originalIndex]) {
+                swap(nums, i, originalIndex);
+            } else {
+                i++;
+            }
+        }
+
+        List<Integer> ans = new ArrayList<>();
+        for (int index = 0; index < nums.length; index++) {
+            if (nums[index] != index + 1) {
+                ans.add(index + 1);
+            }
+        }
+
+        return ans;
+    }
+
     static void swap(int[] arr, int num1, int num2) {
         int temp = arr[num1];
         arr[num1] = arr[num2];
         arr[num2] = temp;
     }
+
 }
