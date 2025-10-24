@@ -89,6 +89,26 @@ public class MissingNumber {
         return ans;
     }
 
+    static int firstMissingPositive(int[] nums) {
+        int i = 0;
+        while (i < nums.length) {
+            int originalIndex = nums[i] - 1;
+            if (nums[i] > 0 && nums[i] <= nums.length && nums[i] != nums[originalIndex]) {
+                swap(nums, i, originalIndex);
+            } else {
+                i++;
+            }
+        }
+
+        for (int index = 0; index < nums.length; index++) {
+            if (nums[index] != index + 1) {
+                return index + 1;
+            }
+        }
+
+        return nums.length + 1;
+    }
+
     static void swap(int[] arr, int num1, int num2) {
         int temp = arr[num1];
         arr[num1] = arr[num2];
