@@ -1,5 +1,4 @@
 
-// This is the given interface
 interface MountainArray {
     public int get(int index);
 
