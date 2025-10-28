@@ -149,12 +149,28 @@ public class Pattern {
 
     static void pattern13(int n) {
         for (int row = 1; row <= n; row++) {
-            int calcCol = row == n ? 2 * n - 1 : row;
             for (int spaces = row; spaces < n; spaces++) {
                 System.out.print(" ");
             }
-            for (int col = 0; col < calcCol; col++) {
-                if (col == 0 || col == calcCol - 1) {
+            for (int col = 0; col < 2 * row - 1; col++) {
+                if (col == 0 || col == 2 * row - 2 || row == n) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+
+            System.out.println();
+        }
+    }
+
+    static void pattern14(int n) {
+        for (int row = 0; row < n; row++) {
+            for (int spaces = 0; spaces < row; spaces++) {
+                System.out.print(" ");
+            }
+            for (int col = row; col < 2 * n - row - 1; col++) {
+                if (col == row || col == 2 * n - row - 2 || row == 0) {
                     System.out.print("*");
                 } else {
                     System.out.print(" ");
@@ -166,6 +182,6 @@ public class Pattern {
     }
 
     public static void main(String[] args) {
-        pattern13(5);
+        pattern14(5);
     }
 }
