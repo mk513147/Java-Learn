@@ -181,7 +181,26 @@ public class Pattern {
         }
     }
 
+    static void pattern15(int n) {
+        for (int row = 1; row < 2 * n; row++) {
+            int calRow = row >= n ? row - n : n - row;
+            for (int spaces = 0; spaces < calRow; spaces++) {
+                System.out.print(" ");
+            }
+            int calcCol = row >= n ? 2 * (2 * n - row) - 1 : 2 * row - 1;
+            for (int col = 0; col < calcCol; col++) {
+                if (col == 0 || col == calcCol - 1) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
-        pattern14(5);
+        pattern15(5);
     }
 }
