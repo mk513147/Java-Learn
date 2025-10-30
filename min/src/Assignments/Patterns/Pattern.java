@@ -200,7 +200,42 @@ public class Pattern {
         }
     }
 
+    static void pattern16(int n) {
+        for (int row = 0; row < n; row++) {
+            for (int spaces = 0; spaces < n - row; spaces++) {
+                System.out.print(" ");
+            }
+            int num = 1;
+            for (int col = 0; col <= row; col++) {
+                System.out.print(num + " ");
+                num = num * (row - col) / (col + 1);
+            }
+
+            System.out.println();
+        }
+    }
+
+    static void pattern17(int n) {
+        for (int row = 1; row < 2 * n; row++) {
+            int calRow = row >= n ? row - n : n - row;
+            for (int spaces = 0; spaces < calRow; spaces++) {
+                System.out.print(" ");
+            }
+            int calcCol = row >= n ? 2 * n - row : row;
+            for (int col = calcCol; col >= 1; col--) {
+                System.out.print(col);
+
+            }
+            for (int col = 1; col < calcCol; col++) {
+                System.out.print(col + 1);
+
+            }
+
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
-        pattern15(5);
+        pattern17(4);
     }
 }
