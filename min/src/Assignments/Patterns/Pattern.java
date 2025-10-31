@@ -235,7 +235,217 @@ public class Pattern {
         }
     }
 
+    static void pattern18(int n) {
+        for (int row = 0; row < 2 * n; row++) {
+            int calcCol = row >= n ? row + 1 - n : n - row;
+            for (int col = 0; col < calcCol; col++) {
+                System.out.print("*");
+
+            }
+
+            int calcSpace = row >= n ? 2 * n - row - 1 : row;
+            for (int spaces = 1; spaces <= calcSpace; spaces++) {
+                System.out.print(" ");
+            }
+
+            for (int spaces = 0; spaces < calcSpace; spaces++) {
+                System.out.print(" ");
+            }
+
+            for (int col = 0; col < calcCol; col++) {
+                System.out.print("*");
+
+            }
+
+            System.out.println();
+        }
+    }
+
+    static void pattern19(int n) {
+        for (int row = 1; row < 2 * n; row++) {
+            int calcCol = row >= n ? 2 * n - row : row;
+            for (int col = 0; col < calcCol; col++) {
+                System.out.print("*");
+
+            }
+
+            int calcSpace = row >= n ? row - n : n - row;
+            for (int spaces = 0; spaces < calcSpace; spaces++) {
+                System.out.print(" ");
+            }
+            for (int spaces = 0; spaces < calcSpace; spaces++) {
+                System.out.print(" ");
+            }
+
+            for (int col = 0; col < calcCol; col++) {
+                System.out.print("*");
+            }
+
+            System.out.println();
+        }
+    }
+
+    static void pattern20(int n) {
+        for (int row = 1; row <= n; row++) {
+            for (int col = 0; col < n - 1; col++) {
+                if (col == 0 || col == n - 2 || row == 1 || row == n) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+
+            System.out.println();
+        }
+    }
+
+    static void pattern21(int n) {
+        int num = 1;
+        for (int row = 1; row <= n; row++) {
+            for (int col = 0; col < row; col++) {
+                System.out.print(num + " ");
+                num++;
+            }
+
+            System.out.println();
+        }
+    }
+
+    static void pattern22(int n) {
+        for (int row = 1; row <= n; row++) {
+            for (int col = 0; col < row; col++) {
+                if (row % 2 == 0) {
+                    if (col % 2 != 0) {
+                        System.out.print(1 + " ");
+                    } else {
+                        System.out.print(0 + " ");
+                    }
+                } else {
+                    if (col % 2 == 0) {
+                        System.out.print(1 + " ");
+                    } else {
+                        System.out.print(0 + " ");
+                    }
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    static void pattern23(int n) {
+        for (int row = 1; row < n; row++) {
+            for (int space = row; space < n; space++) {
+                System.out.print("  ");
+            }
+
+            for (int col = 0; col < row; col++) {
+                if (col == 0 || col == row - 1) {
+                    System.out.print("  *");
+                } else {
+                    System.out.print("   ");
+                }
+            }
+
+            for (int space = 0; space < n - row - 1; space++) {
+                System.out.print("  ");
+            }
+
+            for (int col = 0; col < row; col++) {
+                if (row == n - 1 && col == 0) {
+                    System.out.print("  ");
+                } else if (col == 0 || col == row - 1) {
+                    System.out.print("*  ");
+                } else {
+                    System.out.print("   ");
+                }
+            }
+
+            System.out.println();
+        }
+    }
+
+    static void pattern24(int n) {
+        for (int row = 1; row < 2 * n; row++) {
+            int calcCol = row >= n ? 2 * n - row : row;
+            for (int col = 0; col < calcCol; col++) {
+                if (col == 0 || col == calcCol - 1) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+
+            int calcSpace = row >= n ? row - n : n - row;
+            for (int spaces = 0; spaces < calcSpace; spaces++) {
+                System.out.print(" ");
+            }
+            for (int spaces = 0; spaces < calcSpace; spaces++) {
+                System.out.print(" ");
+            }
+
+            for (int col = 0; col < calcCol; col++) {
+                if (col == 0 || col == calcCol - 1) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+
+            System.out.println();
+        }
+    }
+
+    static void pattern25(int n) {
+        for (int row = 1; row <= n; row++) {
+            for (int spaces = 0; spaces < n - row; spaces++) {
+                System.out.print(" ");
+            }
+
+            for (int col = 0; col < n; col++) {
+                if (col == 0 || col == n - 1 || row == 1 || row == n) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+
+            System.out.println();
+        }
+    }
+
+    static void pattern26(int n) {
+        for (int row = 1; row <= n; row++) {
+            for (int col = 0; col <= n - row; col++) {
+                System.out.print(row);
+            }
+
+            System.out.println();
+        }
+    }
+
+    static void pattern27(int n) {
+        int num1 = 1;
+        int num2 = n * n + 1;
+        for (int row = 0; row < n; row++) {
+            for (int space = 0; space < row; space++) {
+                System.out.print(" ");
+            }
+
+            for (int col = 0; col < n - row; col++) {
+                System.out.print(num1 + "  ");
+                num1++;
+            }
+
+            for (int col = 0; col < n - row; col++) {
+                System.out.print(num2 + "  ");
+                num2++;
+            }
+            num2 = num2 - n - row + 1;
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
-        pattern17(4);
+        pattern27(4);
     }
 }
