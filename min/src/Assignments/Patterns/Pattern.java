@@ -485,7 +485,67 @@ public class Pattern {
         }
     }
 
+    static void pattern31(int n) {
+        int originalN = n;
+        n = 2 * n;
+        for (int row = 0; row <= n; row++) {
+            for (int col = 0; col <= n; col++) {
+                int atEveryIndex = originalN - Math.min(Math.min(row, col), Math.min(n - row, n - col));
+                System.out.print(atEveryIndex + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    static void pattern32(int n) {
+        for (int row = 1; row <= n; row++) {
+            for (int col = row; col > 0; col--) {
+                char ch = (char) (70 - col);
+                System.out.print(ch + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    static void pattern33(int n) {
+        int num = 97;
+        for (int row = 1; row <= n; row++) {
+            for (int col = 0; col < row; col++) {
+                char ch = num % 2 == 0 ? Character.toUpperCase((char) num) : (char) num;
+                System.out.print(ch + " ");
+                num++;
+            }
+            System.out.println();
+        }
+    }
+
+    static void pattern34(int n) {
+        for (int row = 0; row < n; row++) {
+            for (int col = n - row; col > 0; col--) {
+                char ch = (char) (65 + col - 1);
+                System.out.print(ch + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    static void pattern35(int n) {
+        for (int row = 1; row <= n; row++) {
+            for (int col = 1; col <= row; col++) {
+                System.out.print(col);
+            }
+
+            for (int space = 0; space < 2 * (n - row); space++) {
+                System.out.print(" ");
+            }
+            for (int col = row; col >= 1; col--) {
+                System.out.print(col);
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
-        pattern30(5);
+        pattern35(9);
     }
 }
