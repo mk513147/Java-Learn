@@ -13,11 +13,15 @@
    - a ^ 0 = a
 4. **<u>XOR(^)</u>** any binary number with itself gives 0.
    - a ^ a = 0
-5. **<u>Left Shift(<<)</u>** it shifts the bit to the left and adds o to the right side of the binary number.
+5. **<u>Left Shift(<<)</u>** it shifts the bit to the left and adds 0 to the right side of the binary number.
    - 10 << 1 = (1010)<sub>2</sub> << 1
    - = (10100)<sub>2</sub> = 20
    - So, **a << 1 = _2a_**
    - **a << b = a \* $2^b$**
+6. **<u>Right Shift(>>)</u>** it shifts the bit to the right and adds 0 to the left side of the binary number. The number that is the right most after shifting gets removed.
+   - (0011001)<sub>2</sub> >> 1
+   - = (1100)<sub>2</sub>
+   - **a >> b = a / $2^b$**
 
 ## Number System
 
