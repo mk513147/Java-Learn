@@ -1,27 +1,27 @@
 public class BitwiseOperators {
     public static void main(String[] args) {
-        // int num = 23;
-        // System.out.println("Is the number ODD: " + isOdd(num));
 
-        // int[] nums = { 1, 1, 2, 2, 3, 3, 4, 4, 1, 6, 2, 4, 3 };
-        // int numberOfDuplicates = 3;
         // System.out.println("Unique NUmber: " + multipleUnique(nums,
         // numberOfDuplicates));
 
-        int num = 6;
-        System.out.println("Magic Number: " + magicNumber(num));
+        // isOdd();
+        // unique();
+        // magicNumber();
+        // numberOfDigits();
+        sumOfNthRow();
     }
 
-    static boolean isOdd(int num) {
-        return (num & 1) == 1;
+    static void isOdd() {
+        System.out.println("Is the number ODD: " + ((24 & 1) == 1));
     }
 
-    static int unique(int[] nums) {
+    static void unique() {
+        int[] nums = { 1, 1, 2, 2, 3, 3, 4, 4, 1, 6, 2, 4, 3 };
         int xor = 0;
         for (int num : nums) {
             xor ^= num;
         }
-        return xor;
+        System.out.println("Unique Number: " + xor);
     }
 
     // TDOD:
@@ -37,7 +37,8 @@ public class BitwiseOperators {
 
     }
 
-    static int magicNumber(int num) {
+    static void magicNumber() {
+        int num = 6;
         int ans = 0;
         int base = 5;
         while (num > 0) {
@@ -47,6 +48,21 @@ public class BitwiseOperators {
             num = num >> 1;
 
         }
-        return ans;
+        System.out.println("Magic Number: " + ans);
+    }
+
+    static void numberOfDigits() {
+        int num = 10;
+        int base = 2;
+        // log(base)(num) = log(num)/log(base)
+        int ans = (int) (Math.log(num) / Math.log(base)) + 1;
+        System.out.println("Number of Digits: " + ans);
+    }
+
+    // Pascal's Triangle
+    static void sumOfNthRow() {
+        int n = 5;
+        int sum = 1 << n;// it equals 2^n
+        System.out.println("Sum of nth row: " + sum);
     }
 }
