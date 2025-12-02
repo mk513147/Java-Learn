@@ -8,7 +8,10 @@ public class BitwiseOperators {
         // unique();
         // magicNumber();
         // numberOfDigits();
-        sumOfNthRow();
+        // sumOfNthRow();
+        // isPowerOfTwo();
+        // powerOfNumber();
+        setBits();
     }
 
     static void isOdd() {
@@ -64,5 +67,46 @@ public class BitwiseOperators {
         int n = 5;
         int sum = 1 << n;// it equals 2^n
         System.out.println("Sum of nth row: " + sum);
+    }
+
+    static void isPowerOfTwo() {
+        int n = 17;
+        if (n == 0) {
+            System.out.println("Is Power: " + false);
+            return;
+        }
+        boolean ans = (n & (n - 1)) == 0;
+        System.out.println("Is Power: " + ans);
+
+    }
+
+    static void powerOfNumber() {
+        int base = 3;
+        int power = 6;
+
+        int ans = 1;
+        while (power > 0) {
+            if ((power & 1) == 1) {
+                ans *= base;
+            }
+            power = power >> 1;
+            base *= base;
+        }
+        System.out.println("Answer: " + ans);
+    }
+
+    static void setBits() {
+        int n = 10;
+        System.out.println(Integer.toBinaryString(n));
+        int count = 0;
+        // while (n > 0) {
+        //     count++;
+        //     n -= (n & (-n));
+        // }
+        while (n > 0) {
+            count++;
+            n = (n & (n-1));
+        }
+        System.out.println("Number of set Bits: " + count);
     }
 }
