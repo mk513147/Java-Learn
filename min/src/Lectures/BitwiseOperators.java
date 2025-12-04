@@ -11,7 +11,8 @@ public class BitwiseOperators {
         // sumOfNthRow();
         // isPowerOfTwo();
         // powerOfNumber();
-        setBits();
+        // setBits();
+        System.out.println("Xor: " + rangeXor(2, 4));
     }
 
     static void isOdd() {
@@ -100,13 +101,30 @@ public class BitwiseOperators {
         System.out.println(Integer.toBinaryString(n));
         int count = 0;
         // while (n > 0) {
-        //     count++;
-        //     n -= (n & (-n));
+        // count++;
+        // n -= (n & (-n));
         // }
         while (n > 0) {
             count++;
-            n = (n & (n-1));
+            n = (n & (n - 1));
         }
         System.out.println("Number of set Bits: " + count);
+    }
+
+    static int xor(int a) {
+        if (a % 4 == 0) {
+            return a;
+        }
+        if (a % 4 == 1) {
+            return 1;
+        }
+        if (a % 4 == 2) {
+            return a + 1;
+        }
+        return 0;
+    }
+
+    static int rangeXor(int a, int b) {
+        return xor(b) ^ xor(a - 1);
     }
 }
