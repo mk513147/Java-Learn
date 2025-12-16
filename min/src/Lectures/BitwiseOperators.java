@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class BitwiseOperators {
     public static void main(String[] args) {
 
@@ -59,7 +61,8 @@ public class BitwiseOperators {
         int num = 10;
         int base = 2;
         // log(base)(num) = log(num)/log(base)
-        int ans = (int) (Math.log(num) / Math.log(base)) + 1;
+        int ans = (int) (Math.log((double) num) / Math.log((double) base)) + 1;
+
         System.out.println("Number of Digits: " + ans);
     }
 
